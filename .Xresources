@@ -1,0 +1,59 @@
+URxvt.perl-ext-common: default,selection-autotransform,font-size
+
+URxvt.font: xft:roboto mono:size=10
+!URxvt.letterSpace:-3
+
+
+! Base16 OceanicNext
+! Scheme: https://github.com/voronianski/oceanic-next-color-scheme
+
+URxvt*background:                     #222222
+URxvt*foreground:                     #C0C5CE
+URxvt*cursorColor:                    #C0C5CE
+
+URxvt*scrollColor:                    #C0C5CE
+URxvt*highlightColor:                 #4F5B66
+URxvt*highlightTextColor:             #A7ADBA
+
+*color0:                         #1B2B34
+*color1:                         #EC5f67
+*color2:                         #99C794
+*color3:                         #FAC863
+*color4:                         #6699CC
+*color5:                         #C594C5
+*color6:                         #5FB3B3
+*color7:                         #C0C5CE
+*color8:                         #65737E
+*color9:                         #EC5f67
+*color10:                        #99C794
+*color11:                        #FAC863
+*color12:                        #6699CC
+*color13:                        #C594C5
+*color14:                        #5FB3B3
+*color15:                        #D8DEE9
+
+*color16:                        #F99157
+*color17:                        #AB7967
+*color18:                        #343D46
+*color19:                        #4F5B66
+*color20:                        #A7ADBA
+*color21:                        #CDD3DE
+
+URxvt.scrollBar: false
+URxvt*fading: 25
+URxvt*transparent: true
+!URxvt*tintColor: #FF0000
+URxvt*shading: 25
+!URxvt*blurRadius: 25
+URxvt.font-size.step: 4
+
+
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+
