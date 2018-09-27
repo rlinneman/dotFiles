@@ -29,9 +29,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exit
 
 # run menu
-#bindsym $mod+d exec --no-startup-id rofi -show run
-# bindsym $mod+d exec --no-startup-id dmenu_run -i
 bindsym $mod+d exec --no-startup-id rofi -show run
+# bindsym $mod+d exec --no-startup-id dmenu_run -i
 
 
 # FreeBSD bindings for media keys
@@ -142,11 +141,26 @@ bar {
 
 
 exec_always --no-startup-id feh --bg-scale ~/.config/wallpapers/default
+
+# network/wifi management from the try
 exec --no-startup-id nm-applet &
+
+# enable bluetooth management from the tray
 exec --no-startup-id blueman-applet &
+
+# Enable late night blue lite filtering
 exec --no-startup-id redshift-gtk &
+
+# enable notification popups
 exec --no-startup-id dunst -font "Comfortaa 24" &
+
+# enable finger pad tap to click
 exec --no-startup-id xinput set-prop 11 281 1
-exec --no-startup-id compton -CGb
+
+# Enable composition
+# Sure, it's cool, but its also unresonably power hungry
+# exec --no-startup-id compton -CGb
+
+
 exec_always --no-startup-id xrdb ~/.Xresources
 #exec --no-startup-id xrandr --output DVI-D-0 --left-of DVI-I-1
