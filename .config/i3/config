@@ -43,6 +43,13 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 
+# Brightness bindings 
+# Requires light to be installed
+#bindcode 233 exec --no-startup-id light -A 5 
+#bindcode 232 exec --no-startup-id light -U 5
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+
 # use vi style navigation
 set $left h
 set $down j
@@ -152,7 +159,6 @@ exec --no-startup-id blueman-applet &
 exec --no-startup-id redshift-gtk &
 
 # enable notification popups
-# Configuration comes from ./dunst/dunstrc
 exec --no-startup-id dunst &
 
 # enable finger pad tap to click
