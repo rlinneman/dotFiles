@@ -144,6 +144,12 @@ client.background       #ffffff
 bar {
     status_command i3status
     position top
+    tray_output primary
+    tray_padding 0
+    separator_symbol "|"
+    colors{
+        background #333333
+    }
 }
 
 
