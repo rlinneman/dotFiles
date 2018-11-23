@@ -225,7 +225,8 @@ exec_always --no-startup-id feh --bg-scale ~/.config/wallpapers/default
 exec --no-startup-id nm-applet &
 
 # enable bluetooth management from the tray
-exec --no-startup-id blueman-applet &
+#exec --no-startup-id blueman-applet &
+exec --no-startup-id blueberry-tray &
 
 # Enable late night blue lite filtering
 exec --no-startup-id redshift-gtk &
