@@ -151,6 +151,7 @@ mode "window-mode" {
 
 bindsym $mod+m mode "window-mode"
 
+for_window [class="(?i)gimp"] floating enable
 
 bindsym Ctrl+$alt+L  exec "scrot /tmp/i3lock.png; convert /tmp/i3lock.png -blur 0x8 /tmp/i3lock.png; i3lock -i /tmp/i3lock.png; rm /tmp/i3lock.png"
 
