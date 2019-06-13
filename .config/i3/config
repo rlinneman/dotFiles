@@ -10,12 +10,14 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
 
 #font pango:monospace 8
 font pango: Comfortaa 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+bindsym $mod+Shift+space floating toggle
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -150,7 +152,7 @@ mode "window-mode" {
 bindsym $mod+m mode "window-mode"
 
 
-bindsym $mod+Shift+f exec "scrot /tmp/i3lock.png; convert /tmp/i3lock.png -blur 0x8 /tmp/i3lock.png; i3lock -i /tmp/i3lock.png; rm /tmp/i3lock.png"
+bindsym Ctrl+$alt+L  exec "scrot /tmp/i3lock.png; convert /tmp/i3lock.png -blur 0x8 /tmp/i3lock.png; i3lock -i /tmp/i3lock.png; rm /tmp/i3lock.png"
 
 
 
