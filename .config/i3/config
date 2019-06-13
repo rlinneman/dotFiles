@@ -246,4 +246,5 @@ exec --no-startup-id xinput set-prop 11 281 1
 
 
 exec_always --no-startup-id xrdb ~/.Xresources
+exec_always --no-startup-id xrandr --output DP-3 --primary
 #exec --no-startup-id xrandr --output DVI-D-0 --left-of DVI-I-1
