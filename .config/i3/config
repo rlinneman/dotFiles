@@ -129,20 +129,9 @@ bindsym $mod+r mode "resize"
 # resize window (you can also use the mouse for that)
 mode "window-mode" {
 
-        # Pressing left will shrink the window<E2><80><99>s width.
-        # Pressing right will grow the window<E2><80><99>s width.
-        # Pressing up will shrink the window<E2><80><99>s height.
-        # Pressing down will grow the window<E2><80><99>s height.
-        bindsym $left       floating toggle
-        bindsym $down       fullscreen toggle
-#       bindsym $up         resize shrink height 10 px or 10 ppt
-#       bindsym $right      resize grow width 10 px or 10 ppt
-
-#       # same bindings, but for the arrow keys
-#       bindsym Left        resize shrink width 10 px or 10 ppt
-#       bindsym Down        resize grow height 10 px or 10 ppt
-#       bindsym Up          resize shrink height 10 px or 10 ppt
-#       bindsym Right       resize grow width 10 px or 10 ppt
+	bindsym $mod+e layout toggle
+	bindsym $mod+w layout tabbed
+	bindsym $mod+s layout stacking
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
