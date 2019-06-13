@@ -10,7 +10,7 @@ order += "ethernet enp2s0"
 # order += "cpu_temperature 0"
 order += "load"
 order += "tztime local"
-order += "volume master"
+# order += "volume master"
 
 wireless wlp61s0 {
         format_up = "W: (%quality at %essid, %bitrate) %ip"
