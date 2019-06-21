@@ -26,6 +26,8 @@ __git_branch_name() {
 __build_ps1(){
 	local SHA="$(__git_sha_short)"
 
+	local RESET="\[\033[0m\]"
+
 	local BLACK="\[\033[0;30m\]"
 	local BLUE="\[\033[0;34m\]"
 	local GREEN="\[\033[0;32m\]"
@@ -52,9 +54,9 @@ __build_ps1(){
 
 		echo -ne "\e]0;$BRANCH_NAME\u2605$GROOT\007"
 
-		PS1="$BLUE${GROOT##*/}$LIGHT_GRAY $(__git_sha_short) $GREEN$BRANCH_NAME$LIGHT_GRAY:$BLUE${GPATH:=/}$LIGHT_GRAY "
+		PS1="$BLUE${GROOT##*/}$LIGHT_GRAY $(__git_sha_short) $GREEN$BRANCH_NAME$LIGHT_GRAY:$BLUE${GPATH:=/}$RESET "
 	else
 		echo -ne "\e]0;$PWD\007"
-		PS1="[\u@\h $BLUE\W$LIGHT_GRAY]\$ "
+		PS1="[\u@\h $BLUE\W$RESET]\$ "
 	fi
 }
