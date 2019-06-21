@@ -7,13 +7,13 @@ URxvt.font: xft:roboto mono:size=10
 ! Base16 OceanicNext
 ! Scheme: https://github.com/voronianski/oceanic-next-color-scheme
 
-URxvt*background:                     #222222
-URxvt*foreground:                     #C0C5CE
-URxvt*cursorColor:                    #C0C5CE
-
 URxvt*scrollColor:                    #C0C5CE
 URxvt*highlightColor:                 #4F5B66
 URxvt*highlightTextColor:             #A7ADBA
+
+URxvt*background:                     #222222
+URxvt*foreground:                     #C0C5CE
+URxvt*cursorColor:                    #C0C5CE
 
 *color0:                         #1B2B34
 *color1:                         #EC5f67
