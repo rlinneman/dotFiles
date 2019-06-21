@@ -184,16 +184,16 @@ set_from_resource $color7 i3wm.color7       #707880
 set_from_resource $color15 i3wm.color15      #c5c8c6
 
 # class                 border		backgr		text    	indicator	child_border
-client.focused          $background	$background	$foreground	$cursorColor 	$color7
-client.focused_inactive $color0		$color0		$foreground	$color0		$color0
-client.unfocused        $color0		$color0		$foreground	$color0		$color0
-client.urgent           $color0		$color0		$foreground	$color0		$color0
-client.placeholder      $color0		$color0		$foreground	$color0		$color0
+client.focused          $cursorColor	$foreground	$background 	$color12 	$foreground
+client.focused_inactive $background	$background	$foreground 	$background	$background
+client.unfocused        $background	$background	$foreground	$background	$background
+client.urgent           $color1		$color1 	$color15	$background	$color1
+client.placeholder      $background	$background	$foreground	$background	$background
 
 client.background       $background
 
-default_border none
-hide_edge_borders both
+default_border normal 1
+hide_edge_borders smart
 
 
 bar {
@@ -207,6 +207,18 @@ bar {
     separator_symbol "|"
     colors{
         background $background
+        statusline $color7
+        separator $color7
+
+        focused_background $background
+        focused_statusline $foreground
+        focused_separator $cursorColor
+
+        focused_workspace  $cursorColor $foreground $background
+        active_workspace   $foreground $color7 $background
+        inactive_workspace $color8 $color0 $foreground
+        urgent_workspace   $color9 $color1 $color15
+        binding_mode       $color12 $color4 $color15
     }
 }
 

@@ -54,9 +54,9 @@ __build_ps1(){
 
 		echo -ne "\e]0;$BRANCH_NAME\u2605$GROOT\007"
 
-		PS1="$BLUE${GROOT##*/}$LIGHT_GRAY $(__git_sha_short) $GREEN$BRANCH_NAME$LIGHT_GRAY:$BLUE${GPATH:=/}$RESET "
+		PS1="$LIGHT_BLUE${GROOT##*/}$LIGHT_GRAY $(__git_sha_short) $LIGHT_GREEN$BRANCH_NAME$LIGHT_GRAY:$LIGHT_BLUE${GPATH:=/}$RESET "
 	else
 		echo -ne "\e]0;$PWD\007"
-		PS1="[\u@\h $BLUE\W$RESET]\$ "
+		PS1="[\u@\h $LIGHT_BLUE\W$RESET]\$ "
 	fi
 }
