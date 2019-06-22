@@ -21,6 +21,8 @@ bindsym $mod+Shift+space floating toggle
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+p exec i3-input -F 'mark %s' -l 1 -P 'Mark: ' -f 'pango: Comfortaa 24' 
+bindsym $mod+o exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Go to: ' -f 'pango: Comfortaa 24'
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -128,18 +130,18 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # resize window (you can also use the mouse for that)
-mode "window-mode" {
+mode "layout-mode" {
 
-	bindsym $mod+e layout toggle
-	bindsym $mod+w layout tabbed
-	bindsym $mod+s layout stacking
+	bindsym e layout toggle
+	bindsym w layout tabbed; mode "default"
+	bindsym s layout stacking; mode "default"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
-bindsym $mod+m mode "window-mode"
+bindsym $mod+m mode "layout-mode"
 
 for_window [class="(?i)gimp"] floating enable
 
