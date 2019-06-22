@@ -21,8 +21,18 @@ bindsym $mod+Shift+space floating toggle
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+p exec i3-input -F 'mark %s' -l 1 -P 'Mark: ' -f 'pango: Comfortaa 24' 
-bindsym $mod+o exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Go to: ' -f 'pango: Comfortaa 24'
+bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: ' -f 'pango: Comfortaa 16' 
+bindsym $mod+grave exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Go to: ' -f 'pango: Comfortaa 16'
+bindsym $mod+w exec i3-input -F 'rename workspace to "%s"' -P 'Rename Workspace: ' -f 'pango: Comfortaa 16'
+bindsym $mod+Shift+m exec i3-input -F 'move window to mark %s' -l 1 -P 'Move to mark: ' -f 'pango: Comfortaa 16' 
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+bindsym $mod+s exec i3-input -F '[title="%s"] scratchpad show' -P 'Scratchpad:' -f 'pango: Comfortaa 16'
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -74,6 +84,7 @@ bindsym $mod+Shift+$right move right
 
 bindsym $mod+e split toggle
 bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle global
 
 
 # switch to workspace
@@ -104,7 +115,7 @@ bindsym $mod+Shift+0 move container to workspace number 10
 
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
+mode --pango_markup "<span size='large'>R</span><small>esize</small>" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window<E2><80><99>s width.
@@ -127,12 +138,16 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "<span size='large'>R</span><small>esize</small>"
 
 # resize window (you can also use the mouse for that)
-mode "layout-mode" {
+mode --pango_markup "<span size='large'>L</span><small>ayout</small>" {
 
-	bindsym e layout toggle
+	bindsym e layout toggle 
+	bindsym r layout toggle split
+	bindsym h layout splith; mode "default"
+	bindsym v layout splitv; mode "default"
+	bindsym d layout default; mode "default"
 	bindsym w layout tabbed; mode "default"
 	bindsym s layout stacking; mode "default"
 
@@ -141,7 +156,7 @@ mode "layout-mode" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+m mode "layout-mode"
+bindsym $mod+v mode "<span size='large'>L</span><small>ayout</small>"
 
 for_window [class="(?i)gimp"] floating enable
 
