@@ -75,6 +75,7 @@ bindsym $mod+f fullscreen toggle
 
 
 # switch to workspace
+bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -194,6 +195,8 @@ client.background       $background
 
 default_border normal 1
 hide_edge_borders smart
+bindsym $mod+b border toggle
+
 
 
 bar {
