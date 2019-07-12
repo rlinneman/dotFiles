@@ -1,3 +1,6 @@
+Xcursor.theme: Oxygen 29 White Sky
+Xcursor.size: 32
+
 URxvt.perl-ext-common: default,selection-autotransform,font-size
 
 URxvt.font: xft:roboto mono:size=10
@@ -12,7 +15,7 @@ URxvt*highlightColor:                 #4F5B66
 URxvt*highlightTextColor:             #A7ADBA
 
 ! special
-*.foreground:   #ffffff
+*.foreground:   #b9c0cb
 *.background:   #292929
 *.cursorColor:  #ffffff
 
@@ -45,8 +48,8 @@ URxvt*highlightTextColor:             #A7ADBA
 *.color14:      #a3babf
 
 ! white
-*.color7:       #bebebe
-*.color15:      #ffffff
+*.color7:       #6f7783
+*.color15:      #bebebe
 
 URxvt.scrollBar: false
 URxvt*fading: 25

@@ -173,7 +173,7 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+dmenu = /usr/bin/rofi -dmenu -i -p Dunst -select default
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/firefox -new-tab
@@ -217,7 +217,7 @@
 [shortcuts]
 
     # Shortcuts are specified as [modifier+][modifier+]...key
-    # Available modifiers are "ctrl", "mod1" (the alt-key), "mod2",
+    # Available modifiers are "ttrl", "mod1" (the alt-key), "mod2",
     # "mod3" and "mod4" (windows-key).
     # Xev might be helpful to find names for keys.
 

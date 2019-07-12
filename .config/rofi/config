@@ -1,11 +1,11 @@
 ! "Enabled modi" Set from: XResources
-rofi.modi:                           run
+rofi.modi:                           drun,run
 ! "Window width" Set from: XResources
 rofi.width:                          100
 ! "Number of lines" Set from: XResources
 rofi.lines:                          10
 ! "Number of columns" Set from: XResources
-rofi.columns:                        3
+rofi.columns:                        4
 ! "Font to use" Set from: XResources
 rofi.font:                           Comfortaa 15
 ! "Border width" Set from: XResources
@@ -21,7 +21,7 @@ rofi.padding:                        100
 ! "Always show number of lines" Set from: Default
 ! rofi.fixed-num-lines:                true
 ! "Whether to load and show icons" Set from: Default
-! rofi.show-icons:                     false
+rofi.show-icons:                     true
 ! "Terminal to use" Set from: Default
 ! rofi.terminal:                       rofi-sensible-terminal
 ! "Ssh client to use" Set from: Default
@@ -97,15 +97,15 @@ rofi.padding:                        100
 ! "Indicate how it match by underlining it." Set from: Default
 ! rofi.show-match:                     true
 ! "New style theme file" Set from: Default
-! rofi.theme:                          
+rofi.theme:                          /home/rlinneman/.config/rofi/themes/material.rasi
 ! "Color scheme for normal row" Set from: XResources
-rofi.color-normal:                   #282828, #FAC863, #282828, #FAC863, #282828
+! rofi.color-normal:                   #282828, #FAC863, #282828, #FAC863, #282828
 ! "Color scheme for urgent row" Set from: XResources
-rofi.color-urgent:                   #282828, #ebdbb2, #282828, #ebdbb2, #282828
+! rofi.color-urgent:                   #282828, #ebdbb2, #282828, #ebdbb2, #282828
 ! "Color scheme for active row" Set from: XResources
-rofi.color-active:                   #282828, #FAC863, #282828, #FAC863, #282828
+! rofi.color-active:                   #282828, #FAC863, #282828, #FAC863, #282828
 ! "Color scheme window" Set from: XResources
-rofi.color-window:                   #282828, #282828
+! rofi.color-window:                   #282828, #282828
 ! "Directory containing plugins" Set from: Default
 ! rofi.plugin-path:                    /usr/lib64/rofi
 ! "Pidfile location" Set from: Default

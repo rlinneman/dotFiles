@@ -13,25 +13,26 @@ set $mod Mod4
 set $alt Mod1
 
 #font pango:monospace 8
-font pango: Comfortaa 12
+font pango:  Shojumaru Regular 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 bindsym $mod+Shift+space floating toggle
 
-# start a terminal
+# run applications
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: ' -f 'pango: Comfortaa 16' 
-bindsym $mod+grave exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Go to: ' -f 'pango: Comfortaa 16'
-bindsym $mod+w exec i3-input -F 'rename workspace to "%s"' -P 'Rename Workspace: ' -f 'pango: Comfortaa 16'
-bindsym $mod+Shift+m exec i3-input -F 'move window to mark %s' -l 1 -P 'Move to mark: ' -f 'pango: Comfortaa 16' 
+bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: ' -f 'pango: Shojumaru 16' 
+bindsym $mod+F12 exec xpad -n
+
+bindsym $mod+grave exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Go to: ' -f 'pango: Shojumaru 16'
+bindsym $mod+w exec i3-input -F 'rename workspace to "%s"' -P 'Rename Workspace: ' -f 'pango: Shojumaru 16'
+bindsym $mod+Shift+grave exec i3-input -F 'move window to mark %s' -l 1 -P 'Move to mark: ' -f 'pango: Shojumaru 16' 
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
-bindsym $mod+s exec i3-input -F '[title="%s"] scratchpad show' -P 'Scratchpad:' -f 'pango: Comfortaa 16'
 
 
 # kill focused window
@@ -43,7 +44,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exit
 
 # run menu
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show drun 
 # bindsym $mod+d exec --no-startup-id dmenu_run -i
 
 
@@ -75,11 +76,19 @@ bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 
 bindsym $mod+e split toggle
@@ -88,6 +97,7 @@ bindsym $mod+Shift+f fullscreen toggle global
 
 
 # switch to workspace
+WORKSPACE_auto_back_and_forth yes
 bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -112,22 +122,31 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
+# assign workspaces to monitors
+workspace 1 output DP-3
+workspace 2 output DP-3
+workspace 3 output DP-3
+
+workspace 4 output DP-2
+workspace 5 output DP-2
+workspace 6 output DP-2
+
+workspace 7 output HDMI-1
+workspace 8 output HDMI-1
+workspace 9 output HDMI-1
+workspace 10 output HDMI-1
+
 
 
 # resize window (you can also use the mouse for that)
-mode --pango_markup "<span size='large'>R</span><small>esize</small>" {
+mode Resize {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window<E2><80><99>s width.
-        # Pressing right will grow the window<E2><80><99>s width.
-        # Pressing up will shrink the window<E2><80><99>s height.
-        # Pressing down will grow the window<E2><80><99>s height.
         bindsym $left       resize shrink width 10 px or 10 ppt
         bindsym $down       resize grow height 10 px or 10 ppt
         bindsym $up         resize shrink height 10 px or 10 ppt
         bindsym $right      resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
         bindsym Left        resize shrink width 10 px or 10 ppt
         bindsym Down        resize grow height 10 px or 10 ppt
         bindsym Up          resize shrink height 10 px or 10 ppt
@@ -138,10 +157,10 @@ mode --pango_markup "<span size='large'>R</span><small>esize</small>" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "<span size='large'>R</span><small>esize</small>"
+bindsym $mod+r mode Resize
 
 # resize window (you can also use the mouse for that)
-mode --pango_markup "<span size='large'>L</span><small>ayout</small>" {
+mode Layout {
 
 	bindsym e layout toggle 
 	bindsym r layout toggle split
@@ -149,6 +168,7 @@ mode --pango_markup "<span size='large'>L</span><small>ayout</small>" {
 	bindsym v layout splitv; mode "default"
 	bindsym d layout default; mode "default"
 	bindsym w layout tabbed; mode "default"
+	bindsym ttlayout tabbed; mode "default"
 	bindsym s layout stacking; mode "default"
 
         # back to normal: Enter or Escape
@@ -156,11 +176,16 @@ mode --pango_markup "<span size='large'>L</span><small>ayout</small>" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+v mode "<span size='large'>L</span><small>ayout</small>"
+bindsym $mod+v mode Layout
 
-for_window [class="(?i)gimp"] floating enable
-
-bindsym Ctrl+$alt+L  exec "scrot /tmp/i3lock.png; convert /tmp/i3lock.png -blur 0x8 /tmp/i3lock.png; i3lock -i /tmp/i3lock.png; rm /tmp/i3lock.png"
+bindcode 148 exec --no-startup-id /usr/bin/gnome-calculator
+for_window [class="calculator"] floating enable
+for_window [class="xpad"] floating enable border pixel 1
+for_window [title="Karma - Google Chrome"] move to workspace TEST
+for_window [title="Karma DEBUG RUNNER - Google Chrome"] move to workspace TEST
+for_window [title="Mail - Ryan Linneman - Outlook"] move to workspace number 10; focus
+assign [title="Chat | Microsoft Teams"] number 10
+bindsym Ctrl+$alt+L  exec "scrot /tmp/i3lock.png; convert /tmp/i3lock.png -resize 50% -blur 0x8 -resize 200% /tmp/i3lock.png; i3lock -i /tmp/i3lock.png; rm /tmp/i3lock.png"
 
 
 
@@ -221,7 +246,7 @@ bar {
     position top
     tray_output primary
     tray_padding 0
-    font pango:Comfortaa 14
+    font pango:Mirza Medium 12
     strip_workspace_numbers yes
     binding_mode_indicator yes
     separator_symbol "|"
@@ -243,7 +268,13 @@ bar {
 }
 
 
+# enable notification popups
+exec --no-startup-id dunst &
+
+# background
 exec_always --no-startup-id feh --bg-scale ~/.config/wallpapers/default
+
+exec --no-startup-id volumeicon
 
 # network/wifi management from the try
 exec --no-startup-id nm-applet &
@@ -255,18 +286,18 @@ exec --no-startup-id blueberry-tray &
 # Enable late night blue lite filtering
 exec --no-startup-id redshift-gtk &
 
-# enable notification popups
-exec --no-startup-id dunst &
-
 # enable finger pad tap to click
 exec --no-startup-id xinput set-prop 11 281 1
-
-exec --no-startup-id volumeicon
 
 # Enable composition
 # Sure, it's cool, but its also unresonably power hungry
 # exec --no-startup-id compton -CGb
 
+# notepad
+exec --no-startup-id xpad &
+
+# clipboard manager
+exec --no-startup-id parcellite &
 
 exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id xrandr --output DP-3 --primary
